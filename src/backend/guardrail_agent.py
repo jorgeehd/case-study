@@ -2,7 +2,7 @@ import os
 #from dotenv import load_dotenv
 #import together
 from agents import Agent , WebSearchTool, ModelSettings
-from templates import * 
+from templates import guardrail_instructions 
 from pydantic import BaseModel
 from agents import Runner
 import asyncio
@@ -26,7 +26,7 @@ guardrail_agent = Agent(
 )
 
 async def main():
-    result = await Runner.run(guardrail_agent, "What is a lower dishrack wheel")
+    result = await Runner.run(guardrail_agent, "Whats the weather in France")
     print(result.final_output)
 
 # Run the async function
